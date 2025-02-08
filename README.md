@@ -33,6 +33,7 @@ Users should be able to:
 
 - Solution URL: [Solution URL](https://github.com/Joz312v/social-links-challenge3.git)
 - Live Site URL: [Live site URL](https://joz312v.github.io/social-links-challenge3/)
+- With JS: [Upgraded Version of the Challenge](https://joz312v.github.io/social-card-ultimate/)
 
 ## My process
 
