@@ -1,0 +1,213 @@
+:root {
+    /* Colors */
+    --green: hsl(75, 94%, 57%);
+    --white: hsl(0, 0%, 100%);
+    --grey-700: hsl(0, 0%, 20%);
+    --grey-800: hsl(0, 0%, 12%);
+    --grey-900: hsl(0, 0%, 8%);
+
+    /* Typography */
+    --font-family: 'Inter', sans-serif;
+    --font-size: 14px;
+    --font-weight-regular: 400;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--grey-900);
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    color: var(--white);
+    margin: 0;
+}
+
+.container {
+    background-color: var(--grey-800);
+    padding: 15px 20px;
+    border-radius: 15px;
+    border: 1px solid var(--grey-700);
+    max-width: 375px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+
+    /* Entrance */
+    width: 120px;
+    height: 120px;
+    opacity: 1;
+    clip-path: circle(50px);
+
+    animation: expandContainer 1.5s ease-out 2s forwards;
+}
+
+/* Expanding container animation */
+@keyframes expandContainer {
+    0% {
+        width: 120px;
+        height: 120px;
+        clip-path: circle(50px);
+    }
+
+    100% {
+        width: 375px;
+        min-height: 550px;
+        clip-path: none;
+        padding: 30px 15px;
+    }
+}
+
+img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+
+    box-shadow: 0 0 10px var(--green);
+    animation: pulseGlow 2s infinite alternate ease-in-out;
+    transition: transform 0.3s ease-in-out;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
+
+/* Pulsating Glow Animation */
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 0 10px var(--green);
+    }
+
+    100% {
+        box-shadow: 0 0 20px var(--green), 0 0 40px rgba(75, 255, 100, 0.6);
+    }
+}
+
+
+/* Profile texts */
+#profile {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+h1 {
+    margin: 3px 0;
+    font-size: 18px;
+}
+
+.p1 {
+    color: var(--green);
+    margin: 0;
+}
+
+.btns {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    align-items: center;
+}
+
+.button {
+    text-decoration: none;
+    background-color: var(--grey-700);
+    color: var(--white);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 20px;
+    max-width: 250px;
+    margin: 0 auto;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    font-weight: var(--font-weight-semibold);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.button:hover {
+    background-color: var(--grey-800);
+    border: 2px solid var(--green);
+    color: var(--green);
+}
+
+.attribution {
+    text-align: center;
+    font-size: 12px;
+    color: var(--white);
+    margin-top: 20px;
+    padding: 10px;
+    width: 100%;
+    max-width: 375px;
+}
+
+.attribution a {
+    color: var(--green);
+    text-decoration: none;
+    font-weight: var(--font-weight-semibold);
+    transition: color 0.3s ease-in-out;
+}
+
+.attribution a:hover {
+    color: rgba(75, 255, 100, 0.8);
+}
+
+/* Media queries*/
+
+@media screen and (max-width: 375px) {
+    .container {
+        padding: 20px;
+        max-width: 90%;
+    }
+
+    img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .button {
+        padding: 8px 20px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .container {
+        max-width: 400px;
+        padding: 40px;
+    }
+}
+
+/* Mobile Adjustments */
+@media screen and (max-width: 375px) {
+    .attribution {
+        font-size: 11px;
+        margin-top: 15px;
+    }
+}
+
+/* Desktop Adjustments */
+@media screen and (min-width: 1440px) {
+    .attribution {
+        font-size: 14px;
+        max-width: 400px;
+        margin-top: 30px;
+    }
+}
+
+
